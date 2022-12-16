@@ -13,15 +13,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: choco install docfx
-        run: |
-          choco install docfx -y
-      - name: build metadata
-        run: |
-          docfx metadata -f
-      - name: build website
-        run: |
-          docfx build -f --warningsAsErrors
+          
+      - name: Install DocFX
+        uses: nikeee/docfx-action@v1.0.0
+        with:
+          args: docfx_project/docfx.json
+     
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
