@@ -21,13 +21,27 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "templates/singulinkfx"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "disableGitFeatures": false,
+    "globalMetadata": {
+      "_appTitle": "Making life simpler through code.",
+      "_appName": "A collection of thoughts",
+      "_appFaviconPath": "images/favicon.png",
+      "_appLogoPath": "images/Stroke.png",
+      "_appFooter": "<strong>Made with ❤️</strong>",
+      "_copyrightFooter": "© Ben Borra. All rights reserved.",
+      "_enableSearch": false,
+      "_disableSideFilter": true,
+      "_enableNewTab": true,
+      "_disableContribution": true,
+      "_disableBreadcrumb": true
+    }
   }
 }
