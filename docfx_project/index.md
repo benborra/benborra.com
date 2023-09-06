@@ -26,4 +26,4 @@ I have also been playing the drums for over 20 years. With this I have been in a
 
 I'm also a big fan of the outdoors, and I enjoy hiking and camping. Best trip I've done so far was 3 week backpacking in Iceland. Over the last couple of years I've also gone snowboarding a couple of times. Something I'm definitely planning to do more in the future.
 
-At home I like to spend time in my yard, being it gardening, just enjoying the sun, or BBQing. I also enjoy cooking in general, and I'm always try out new things. Other than that I also try to tinker a bit. Last year we've installed solar panels on our roof, and I've been trying to automate some things in the house.
+At home I like to spend time in my yard, being it gardening, just enjoying the sun, or BBQing. I also enjoy cooking in general, and I'm always try out new things. Other than that I also try to tinker a bit. Last year we've installed solar panels on our roof, and I've been trying to automate some things in the house. Once of those projects, for example, was to automatically charge my hot water boiler with excess solar energy.
