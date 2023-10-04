@@ -8,6 +8,10 @@
     @media(max-width: 750px) {
          .intro {
             flex-direction: column;
+        }
+        img {
+             margin-left: auto;
+            margin-right: auto;
          }
     }
 </style>
