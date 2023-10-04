@@ -1,6 +1,17 @@
 # **Hi! 👋**
 
-<div style="display:flex; flex: 1 0 auto;">
+<style>
+    .intro {
+        display: flex; 
+        flex: 1 0 auto;
+    }
+    @media(max-width: 750px) {
+         .intro {
+            flex-direction: column;
+         }
+    }
+</style>
+<div class="intro">
 <p style="min-width:200px;">
 My name is Ben Borra, I'm a Software consultant at <a href="https://noest.be">Noest</a>.
 <br>
@@ -13,7 +24,7 @@ The goal of this website is to be a bit of a second brain and mostly a place to 
 If you want to contact me you can do so on my <a href="https://www.linkedin.com/in/ben-borra/">LinkedIn</a> page.
 </p>
 
-<img src="images/root/me.jpg" style="height: 350px; border-radius: 350px;"  />
+<img src="images/root/me.jpg" style="height: 350px; width: 350px; border-radius: 350px;"  />
 </div>
 
 
