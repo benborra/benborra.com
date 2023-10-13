@@ -79,6 +79,7 @@ We also don't want to put unnecessary strain on the boiler with cycling it on an
 Feel free to tweak these values to your liking.
 The P1 meter has 2 power meters for peak and off peak hours, so we'll need to add 2 triggers, one for each power meter.
 Your trigger should look something like this:
+
 ![on trigger for boiler](<images/on_trigger.png>)
 
 Finally, add the action to enable the boiler, select the device and set the state to 'on'.
@@ -91,6 +92,7 @@ Your action should look something like this:
 Next, we do the same thing again for the off trigger.
 Here we can set the power draw to 0, or a bit below if you want some margin for spikes, or even a bit over zero in case you're OK with some power in peak hours for the benefit of using more, cheaper, solar power. In my configuration, I've opted for 50 watts below zero. In addition to a 45 second duration to once again prevent the boiler from toggling on and off too much.
 And again, we'll need to add 2 triggers, one for each power meter.
+
 ![Off trigger of the boiler](images/off_trigger.png)
 
 And that's it! You should be good to go, now only to wait for some sun and you're charging your boiler.
@@ -100,9 +102,11 @@ And that's it! You should be good to go, now only to wait for some sun and you'r
 ### Night time charging
 
 Usually these boilers are set to charge at night when the energy prices are low. If you followed the guid along you should have wired the shelly in parallel with the clock. This means that the clock will still be able to charge the boiler at night. But if you want to manage this yourself, you can also add a trigger for this. For this you'll need to add a trigger for the time, and set it to the time that you want to start charging. In my case I've set it to 2:00am. And then add an action to turn on the boiler. This should look something like this:
+
 ![night time charging enabled](images/night_time_charge_trigger.png)
 
 As an action, add a device, select your boiler and set the state to 'on'. After this, delay for the time your boiler to charge at night, and a final action to turn off the boiler. This should look something like this:
+
 ![Action to trigger off boiler](images/turn_off_boiler_trigger.png)
 
 Personally, I let this setup up until now run for a couple of days to be sure that everything was working as expected. I didn't want to risk burning expensive electricity because I made a mistake, or not having any hot water in the morning because my automation didn't work.
