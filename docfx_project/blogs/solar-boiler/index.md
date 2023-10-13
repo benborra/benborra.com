@@ -2,7 +2,7 @@
 
 *tl;dr we're automatically charging our boiler with excess solar power. See how, go to [the setup](#setup)*
 
-![House with solar panels on it's roof](<iStock-182819508 solar roof.jpg>)
+![House with solar panels on it's roof](<images/iStock-182819508 solar roof.jpg>)
 
 ## Why
 
@@ -36,12 +36,12 @@ For this, we basically need 3 things:
 ### Real time power meter
 
 For a real time power meter there are a lot of options. Fortunately for us, the digital power meter comes with a [P1 port](https://nl.wikipedia.org/wiki/P1-poort) which is basically a communication standard to turn your digital meter into a smart meter. For this I'm using the [Home Wizard P1 wifi meter](https://www.homewizard.com/shop/wi-fi-p1-meter/) for €30. It's one of the cheaper options, doesn't require a subscription, you can access the data locally, and it's easy to integrate with other systems. There's also an app that allows you to see your consumption in real time any where in the world, and see your historical data.
-![P1 meter with app](<P1_meter_app.png>)
+![P1 meter with app](<images/P1_meter_app.png>)
 
 ### Switching the boiler
 
 For this I'm using a [Shelly 1PM](https://www.shelly.com/en-be/products/shop/shelly-plus-1-pm-2-pack/shelly-plus-1-pm) which costs around €20. Special note here, thought you could use again close to any shelly that you may have lying around. Not all of them have the switching capacity for the power that a boiler utilizes. Be sure to check how large the power draw of your 'battery' is, and how many phases that you need to be able to switch.
-![Alt text](Shelly_Plus1PM_x1.png)
+![Alt text](images/Shelly_Plus1PM_x1.png)
 
 ### Controller
 
@@ -49,9 +49,45 @@ Finally, where everything comes together, the brains of the operation. For this 
 
 **The most important part is that the switch and power meter can be [integrated with home assistant](https://www.home-assistant.io/integrations).**
 
-![Homeassistant](hero_screenshot.png)
+![Homeassistant](images/hero_screenshot.png)
 
 ## The Configuration
 
+### Home Assistant and integrations
+
 First of all, you'll have to go through the setup procedure for all 3 devices. For this, this best to follow the instructions on the respective websites. I'll be using the [Home Assistant OS](https://www.home-assistant.io/installation/) on my raspberry pi, but you can use any of the other options as well.
 Next, we'll need to add the devices to our home assistant to be able to communicate with it. To add the P1 meter and shelly to home assistant, you'll need to go to the 'settings' page and open 'devices & services'. It might be that these show up ready for you to add, if not you can them manually with the 'Add integration' option in the bottom right corner.
+
+### The automation
+
+Now that we have all the devices added to home assistant, we can start with the automation. For this we'll need to create a new automation. This can be done by going to the 'Settings' page and opening the 'automations & scenes' page. Here you can create a new automation by clicking the 'Create automation' in the bottom right corner.
+
+Here we basically have 3 parts:
+- The triggers, or what starts the automation
+- The conditions, or what needs to be true for the action to run
+- The actions, or what we want to happen
+
+#### Auto on
+
+As a trigger, we want to know the amount of power that we're exporting to be greater than the power that our boiler draws.
+For this you read the specifications of your boiler, or briefly enable the boiler and keep an look at the power consumption spike. It's best to add a little buffer to this.
+In my case, the boiler draws around 3kW, so I'm going to set the trigger to 3.2kW. This means that if I'm exporting more than 3.2kW, the boiler will be turned on.
+We also don't want to put unnecessary strain on the boiler with cycling it on and off every time we export a little bit over the set threshold. So I'm going to add a little duration of 3 minutes. This means that the power export needs to be at least 3.2kW for 3 minutes before the boiler will be turned on.
+Feel free to tweak these values to your liking.
+The P1 meter has 2 power meters for peak and off peak hours, so we'll need to add 2 triggers, one for each power meter.
+Your trigger should look something like this:
+![on trigger for boiler](<images/on_trigger.png>)
+
+Finally, add the action to enable the boiler, select the device and set the state to 'on'.
+Add an action for a Device, select your boiler and pick the 'Turn on' action.
+Your action should look something like this:
+![Action to turn on boiler](images/on_action.png)
+
+#### Auto off
+
+
+## Expansion
+
+### Night time charging
+
+### Humidity reset
