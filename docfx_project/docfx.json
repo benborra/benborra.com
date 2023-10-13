@@ -28,7 +28,7 @@
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
-    "keepFileLink": true,
+    "keepFileLink": false,
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
     "globalMetadata": {
