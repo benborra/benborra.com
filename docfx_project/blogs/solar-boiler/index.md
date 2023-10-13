@@ -3,6 +3,7 @@
 *tl;dr we're automatically charging our boiler with excess solar power. See how, go to [the setup](#the-setup)*
 
 ![House with solar panels on it's roof](<images/iStock-182819508 solar roof.jpg>)
+![House with solar panels on it's roof](<images/Stroke.png>)
 
 ## Why
 
