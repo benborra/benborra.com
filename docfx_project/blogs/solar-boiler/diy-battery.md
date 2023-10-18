@@ -50,7 +50,8 @@ If you want to completely manage the night time charging by the shelly, this can
 
 Finally, where everything comes together, the brains of the operation. For this I'm using [Home Assistant](https://www.home-assistant.io/) which is basically a free open source smart home system. It's fairly easy to setup, and can run on an large number of different devices. In my case I'm using a raspberry Pi 3 that I had laying around. Thought it's at the time of writing quite pricy, they used to cost around €35 back when I purchased mine. The prices have gone down already a bit, and I'm sure they'll continue to do so. You can also run it on a virtual machine, or even in a docker container. There are a lot of options here.
 
-**The most important part is that the switch and power meter can be [integrated with home assistant](https://www.home-assistant.io/integrations).**
+> [!NOTE]
+> The most important part is that the switch and power meter can be [integrated with home assistant](https://www.home-assistant.io/integrations).
 
 ![Homeassistant](images/hero_screenshot.png)
 
@@ -147,26 +148,28 @@ In the automation created in the [night time charging](#night-time-charging), ad
 If you're not using it, or if you want to ensure that you're boiler heats up again at night, add a new timed automation at the time of your liking.
 
 Finally, we have a true/false property that toggles if the solar panels completely charged the boiler. We can start adding this into our 'On' triggered automations.
-First, let's add it to the nightime charging now that we already have this opened.
+First, let's add it to the nigh time charging now that we already have this opened.
 
 In the Conditions section, add a new check to require the Completed toggle to be 'Off'. Again, this will only be enable if you've already got a completely charge boiler from the solar charging the day before.
 ![Solar Charged condition](images/Solar_charge_completed_condition.png)
 
 And add the same check to the 'On' trigger automation for your solar panel boiler charging.
 
-#### Disclaimer 1
 
-Make sure the target temperature is sufficiently high for your boiler. The configuration can result in your boiler being completely charged at 9am, and remain at this temperature for the second night until the night time charger kicks in again.
+> [!IMPORTANT]
+> Make sure the target temperature is sufficiently high for your boiler. The configuration can result in your boiler being completely charged at 9am, and remain at this temperature for the second night until the night time charger kicks in again.
 
-#### Disclaimer 2
 
-If you're using your water after the solar charging was completed, new cold water will be in your boiler. It's then possible that you wont have sufficient hot water the following morning. To circumvent this, see the [humidity reset](#humidity-reset).
+> [!IMPORTANT]
+> If you're using your water after the solar charging was completed, new cold water will be in your boiler. It's then possible that you wont have sufficient hot water the following morning. To circumvent this, see the [humidity reset](#humidity-reset).
 
-*Note, this requires your night time charger to also be managed by home assistant to fully work, otherwise you'll still get some power draw at night.*
+> [!NOTE]
+> This requires your night time charger to also be managed by home assistant to fully work, otherwise you'll still get some power draw at night.
 
 ### Humidity reset
 
-*Note: only a potential problem incase you implemented the [over charge prevention](#no-more-overcharging).*
+> [!NOTE]
+> Only a potential problem incase you implemented the [over charge prevention](#no-more-overcharging).
 
 As mention in the disclaimers of the previous section. Incase the solar charging was completed, and you use water afterwards, this will result in cold water being put into your boiler, and this not being charged anymore by your solar powers, or night time charging until the start of the next day.
 
