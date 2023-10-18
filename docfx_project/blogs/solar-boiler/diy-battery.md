@@ -124,6 +124,7 @@ So I've added a check to see if the boiler was charged completely during the day
 
 For the solar charging completed check, I first added a helper. This is basically a variable that you can set in home assistant. For this I've added a helper of the type 'input boolean'. This is basically a true/false variable that you can set in home assistant. I've called mine 'Solar Charging boiler Bathroom Completed Today'. You can add a helper by going to the 'settings' page, 'Devices & Services' and opening the 'helpers' page. Here you can create a new helper by clicking the 'Create helper' in the bottom right corner.
 And create a new 'Toggle'
+
 ![Toggle for solar completed charging](images/Solar_complete_toggle.png)
 
 Next we'll need to create an automation to enable the toggle to indicate that solar charging was done for that day. We can do this with the power changes for the the shelly, this indicates the power flowing through your switch, or not. If the switch is closed, but no power is flowing, indicates to use that the heat of the boiler has reached it's target.
