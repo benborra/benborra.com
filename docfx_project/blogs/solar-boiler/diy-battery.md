@@ -44,7 +44,8 @@ For this I'm using a [Shelly 1PM](https://www.shelly.com/en-be/products/shop/she
 Boilers are usually controlled by a programmable clock. If you want to add the shelly, just wire the switch of the Shelly to be in parallel with switch of the clock. This way you're night time charging will always remain working as a fall back.
 If this all means nothing to you, maybe best to contact an electrician to help you out.
 If you want to completely manage the night time charging by the shelly, this can also be integrated into the system. Go to the section [night time charging](#night-time-charging) for more information.
-![Alt text](images/Shelly_Plus1PM_x1.png)
+
+![Shelly relay](images/Shelly_Plus1PM_x1.png)
 
 ### Controller
 
