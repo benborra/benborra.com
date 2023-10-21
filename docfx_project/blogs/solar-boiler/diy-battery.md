@@ -1,6 +1,6 @@
-# 100 euro solar battery
+# 12kWh solar battery for 100 euro
 
-*tl;dr we're automatically charging our boiler with excess solar power. See how, go to [the setup](#the-setup)*
+*tl;dr we're automatically charging our boiler with excess solar power. See how, go to the setup*
 
 ![House with solar panels on it's roof](<images/iStock-182819508 solar roof.jpg>)
 
@@ -44,7 +44,7 @@ For a real time power meter there are a lot of options. Fortunately for us, the 
 For this I'm using a [Shelly 1PM](https://www.shelly.com/en-be/products/shop/shelly-plus-1-pm-2-pack/shelly-plus-1-pm) which costs around €20. Special note here, thought you could use again close to any shelly that you may have lying around. Not all of them have the switching capacity for the power that a boiler utilizes. Be sure to check how large the power draw of your 'battery' is, and how many phases that you need to be able to switch.
 Boilers are usually controlled by a programmable clock. If you want to add the shelly, just wire the switch of the Shelly to be in parallel with switch of the clock. This way you're night time charging will always remain working as a fall back.
 If this all means nothing to you, maybe best to contact an electrician to help you out.
-If you want to completely manage the night time charging by the shelly, this can also be integrated into the system. Go to the section [night time charging](#night-time-charging) for more information.
+If you want to completely manage the night time charging by the shelly, this can also be integrated into the system. Go to the section night time charging for more information.
 
 ![Shelly relay](images/Shelly_Plus1PM_x1.png)
 
@@ -88,6 +88,7 @@ Your trigger should look something like this:
 Finally, add the action to enable the boiler, select the device and set the state to 'on'.
 Add an action for a Device, select your boiler and pick the 'Turn on' action.
 Your action should look something like this:
+
 ![Action to turn on boiler](images/on_action.png)
 
 #### Auto off
@@ -144,7 +145,7 @@ As an action, I turn off the boiler, and enable the toggle to track Charge compe
 
 Before adding this as a condition, we want to make sure that the toggle is being reset daily. As we don't want to charge our boiler at night if the day before it was completely charged by the solar power, we can add this as a final step to our night time automation.
 
-In the automation created in the [night time charging](#night-time-charging), add an addition action at the end to disable the helper toggle again.
+In the automation created in the night time charging, add an addition action at the end to disable the helper toggle again.
 
 ![Disable completed charge toggle](images/disable_toggle_helper.png)
 
@@ -164,7 +165,7 @@ And add the same check to the 'On' trigger automation for your solar panel boile
 
 
 > [!IMPORTANT]
-> If you're using your water after the solar charging was completed, new cold water will be in your boiler. It's then possible that you wont have sufficient hot water the following morning. To circumvent this, see the [humidity reset](#humidity-reset).
+> If you're using your water after the solar charging was completed, new cold water will be in your boiler. It's then possible that you wont have sufficient hot water the following morning. To circumvent this, see the humidity reset.
 
 > [!NOTE]
 > This requires your night time charger to also be managed by home assistant to fully work, otherwise you'll still get some power draw at night.
@@ -172,7 +173,7 @@ And add the same check to the 'On' trigger automation for your solar panel boile
 ### Humidity reset
 
 > [!NOTE]
-> Only a potential problem incase you implemented the [over charge prevention](#no-more-overcharging).
+> Only a potential problem incase you implemented the over charge prevention.
 
 As mention in the disclaimers of the previous section. Incase the solar charging was completed, and you use water afterwards, this will result in cold water being put into your boiler, and this not being charged anymore by your solar powers, or night time charging until the start of the next day.
 
