@@ -14,7 +14,8 @@
       {
         "files": [
           "images/**",
-          "blogs/solar-boiler/images/**"
+          "blogs/solar-boiler/images/**",
+          "**.jpg"
         ]
       }
     ],
