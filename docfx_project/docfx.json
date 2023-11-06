@@ -5,6 +5,7 @@
         "files": [
           "blogs/**.md",
           "blogs/**/toc.yml",
+          "random/**.md",
           "toc.yml",
           "*.md"
         ]
