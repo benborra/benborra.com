@@ -55,7 +55,7 @@ If you want to completely manage the night time charging by the shelly, this can
 
 ### Controller
 
-Finally, where everything comes together, the brains of the operation. For this I'm using [Home Assistant](https://www.home-assistant.io/) which is basically a free open source smart home system. It's fairly easy to setup, and can run on an large number of different devices. In my case I'm using a raspberry Pi 3 that I had laying around. Thought it's at the time of writing quite pricy, they used to cost around €35 back when I purchased mine. The prices have gone down already a bit, and I'm sure they'll continue to do so. You can also run it on a virtual machine, or even in a docker container. There are a lot of options here.
+Finally, where everything comes together, the brains of the operation. For this I'm using [Home Assistant](https://www.home-assistant.io/) which is basically a free open source smart home system. It's fairly easy to setup, and can run on an large number of different devices. In my case I'm using a raspberry Pi 3 that I had laying around. Thought it's at the time of writing quite pricy, they used to cost around €35 back when I purchased mine. The prices have gone down already a bit, and I'm sure they'll continue to do so. You can also run it on a virtual machine, or even in a docker container. There are a lot of options here. A good starting point for finding a Raspberry Pi is on [their website](https://www.raspberrypi.com/).
 
 > [!NOTE]
 > The most important part is that the switch and power meter can be [integrated with home assistant](https://www.home-assistant.io/integrations).
