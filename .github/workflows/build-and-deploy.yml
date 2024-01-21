@@ -15,7 +15,7 @@ jobs:
           submodules: true
           
       - name: Install DocFX
-        uses: nikeee/docfx-action@v1.0.0
+        uses: nunit/docfx-action@v2.4.0
         with:
           args: docfx_project/docfx.json
      
