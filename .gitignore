@@ -10,3 +10,7 @@ _site
 
 # Added
 docfx
+
+# Added for Hugo
+/src/public
+**.lock
