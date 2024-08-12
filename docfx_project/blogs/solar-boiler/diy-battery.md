@@ -1,6 +1,9 @@
 ---
 summary: We're using an electric water heater as a batter that's being charged during the day time with excess solar power.
 uid: diy-battery
+og.image: images/iStock-182819508 solar roof.jpg
+og.description: We're using an electric water heater as a batter that's being charged during the day time with excess solar power.
+og.title: 12kWh solar battery for 100 euro
 ---
 
 # 12kWh solar battery for 100 euro
